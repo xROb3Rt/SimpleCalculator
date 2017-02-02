@@ -8,6 +8,7 @@ public class CalculatorActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        //puta
         setContentView(R.layout.activity_calculator);
     }
 }
