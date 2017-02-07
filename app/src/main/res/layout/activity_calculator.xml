@@ -8,7 +8,8 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.devices1.mobile.simplecalculator.CalculatorActivity">
+    tools:context="com.devices1.mobile.simplecalculator.CalculatorActivity"
+    android:background="@android:color/holo_blue_light">
 
     <LinearLayout
         android:orientation="vertical"
@@ -25,7 +26,8 @@
             android:layout_height="46dp"
             android:id="@+id/pantallaInput"
             android:ellipsize="start"
-            android:maxLines="1" />
+            android:maxLines="1"
+            android:background="#ffe899" />
 
     </LinearLayout>
 
@@ -45,14 +47,16 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:onClick="allClearPressed"
-            android:id="@+id/buttonAC" />
+            android:id="@+id/buttonAC"
+            android:background="@drawable/button_ac" />
 
         <Button
             android:text="C"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:onClick="clearPressed"
-            android:id="@+id/buttonC" />
+            android:id="@+id/buttonC"
+            android:background="@drawable/button_ac"/>
 
         <TextView
             android:layout_width="wrap_content"
@@ -60,7 +64,8 @@
             android:id="@+id/pantallaOutput"
             android:layout_weight="1"
             android:gravity="right"
-            android:maxLines="1" />
+            android:maxLines="1"
+            android:background="#ffe899" />
     </LinearLayout>
 
     <LinearLayout
@@ -70,7 +75,9 @@
         android:layout_marginTop="110dp"
         android:layout_below="@+id/linearLayout2"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true">
+        android:layout_alignParentStart="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true">
 
         <Button
             android:text="7"
@@ -78,7 +85,8 @@
             android:layout_height="wrap_content"
             android:id="@+id/button7"
             android:onClick="numberPressed"
-            android:layout_weight="1" />
+            android:layout_weight="1"
+            android:background="@drawable/number_button"/>
 
         <Button
             android:text="8"
@@ -86,7 +94,9 @@
             android:layout_height="wrap_content"
             android:id="@+id/button8"
             android:onClick="numberPressed"
-            android:layout_weight="1" />
+            android:layout_weight="1"
+            android:background="@drawable/number_button"
+            android:layout_alignParentBottom="false" />
 
         <Button
             android:text="9"
@@ -94,7 +104,8 @@
             android:layout_height="wrap_content"
             android:id="@+id/button9"
             android:onClick="numberPressed"
-            android:layout_weight="1" />
+            android:layout_weight="1"
+            android:background="@drawable/number_button"/>
 
         <Button
             android:text="+"
@@ -102,7 +113,8 @@
             android:layout_height="wrap_content"
             android:id="@+id/buttonAdd"
             android:onClick="operatorPressed"
-            android:layout_weight="1" />
+            android:layout_weight="1"
+            android:background="@drawable/button_simbol"/>
     </LinearLayout>
 
     <LinearLayout
@@ -120,7 +132,8 @@
             android:layout_height="wrap_content"
             android:id="@+id/button4"
             android:onClick="numberPressed"
-            android:layout_weight="1" />
+            android:layout_weight="1"
+            android:background="@drawable/number_button"/>
 
         <Button
             android:text="5"
@@ -128,7 +141,8 @@
             android:layout_height="wrap_content"
             android:id="@+id/button5"
             android:onClick="numberPressed"
-            android:layout_weight="1" />
+            android:layout_weight="1"
+            android:background="@drawable/number_button"/>
 
         <Button
             android:text="6"
@@ -136,7 +150,8 @@
             android:layout_height="wrap_content"
             android:id="@+id/button6"
             android:onClick="numberPressed"
-            android:layout_weight="1" />
+            android:layout_weight="1"
+            android:background="@drawable/number_button"/>
 
         <Button
             android:text="-"
@@ -144,7 +159,8 @@
             android:layout_height="wrap_content"
             android:id="@+id/buttonSub"
             android:onClick="operatorPressed"
-            android:layout_weight="1" />
+            android:layout_weight="1"
+            android:background="@drawable/button_simbol"/>
     </LinearLayout>
 
     <LinearLayout
@@ -162,7 +178,8 @@
             android:layout_height="wrap_content"
             android:id="@+id/button1"
             android:onClick="numberPressed"
-            android:layout_weight="1" />
+            android:layout_weight="1"
+            android:background="@drawable/number_button"/>
 
         <Button
             android:text="2"
@@ -170,7 +187,8 @@
             android:layout_height="wrap_content"
             android:id="@+id/button2"
             android:onClick="numberPressed"
-            android:layout_weight="1" />
+            android:layout_weight="1"
+            android:background="@drawable/number_button"/>
 
         <Button
             android:text="3"
@@ -178,7 +196,8 @@
             android:layout_height="wrap_content"
             android:id="@+id/button3"
             android:onClick="numberPressed"
-            android:layout_weight="1" />
+            android:layout_weight="1"
+            android:background="@drawable/number_button"/>
 
         <Button
             android:text="*"
@@ -186,7 +205,8 @@
             android:layout_height="wrap_content"
             android:id="@+id/buttonMult"
             android:onClick="operatorPressed"
-            android:layout_weight="1" />
+            android:layout_weight="1"
+            android:background="@drawable/button_simbol"/>
     </LinearLayout>
 
     <LinearLayout
@@ -205,6 +225,7 @@
             android:id="@+id/buttonDot"
             android:onClick="pointPressed"
             android:layout_weight="1"
+            android:background="@drawable/button_dot"
             />
 
         <Button
@@ -213,7 +234,8 @@
             android:layout_height="wrap_content"
             android:id="@+id/button0"
             android:onClick="numberPressed"
-            android:layout_weight="1" />
+            android:layout_weight="1"
+            android:background="@drawable/number_button"/>
 
         <Button
             android:text="="
@@ -221,7 +243,8 @@
             android:layout_height="wrap_content"
             android:id="@+id/buttonEq"
             android:onClick="equalPressed"
-            android:layout_weight="1" />
+            android:layout_weight="1"
+            android:background="@drawable/button_equal"/>
 
         <Button
             android:text="/"
@@ -229,8 +252,7 @@
             android:layout_height="wrap_content"
             android:id="@+id/buttonDiv"
             android:onClick="operatorPressed"
-            android:layout_weight="1"
-            android:background="@drawable/number_button"/>
+            android:background="@drawable/button_simbol"/>
     </LinearLayout>
 
 </RelativeLayout>
