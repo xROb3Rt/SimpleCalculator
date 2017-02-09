@@ -13,154 +13,22 @@
 
     <LinearLayout
         android:orientation="vertical"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true">
+        android:layout_alignParentEnd="true"
+        android:layout_width="match_parent"
+        android:layout_height="70dp">
 
         <TextView
             android:layout_width="match_parent"
-            android:layout_height="46dp"
             android:id="@+id/pantallaInput"
             android:ellipsize="start"
             android:maxLines="1"
-            android:background="#ffe899" />
+            android:background="#ffe899"
+            android:layout_height="70dp" />
 
-    </LinearLayout>
-
-    <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/linearLayout"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="60dp"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true">
-
-        <Button
-            android:text="AC"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:onClick="allClearPressed"
-            android:id="@+id/buttonAC"
-            android:background="@drawable/button_ac" />
-
-        <Button
-            android:text="C"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:onClick="clearPressed"
-            android:id="@+id/buttonC"
-            android:background="@drawable/button_ac"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:id="@+id/pantallaOutput"
-            android:layout_weight="1"
-            android:gravity="right"
-            android:maxLines="1"
-            android:background="#ffe899" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="110dp"
-        android:layout_below="@+id/linearLayout2"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true">
-
-        <Button
-            android:text="7"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/button7"
-            android:onClick="numberPressed"
-            android:layout_weight="1"
-            android:background="@drawable/number_button"/>
-
-        <Button
-            android:text="8"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/button8"
-            android:onClick="numberPressed"
-            android:layout_weight="1"
-            android:background="@drawable/number_button"
-            android:layout_alignParentBottom="false" />
-
-        <Button
-            android:text="9"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/button9"
-            android:onClick="numberPressed"
-            android:layout_weight="1"
-            android:background="@drawable/number_button"/>
-
-        <Button
-            android:text="+"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/buttonAdd"
-            android:onClick="operatorPressed"
-            android:layout_weight="1"
-            android:background="@drawable/button_simbol"/>
-    </LinearLayout>
-
-    <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/linearLayout2"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="160dp">
-
-        <Button
-            android:text="4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/button4"
-            android:onClick="numberPressed"
-            android:layout_weight="1"
-            android:background="@drawable/number_button"/>
-
-        <Button
-            android:text="5"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/button5"
-            android:onClick="numberPressed"
-            android:layout_weight="1"
-            android:background="@drawable/number_button"/>
-
-        <Button
-            android:text="6"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/button6"
-            android:onClick="numberPressed"
-            android:layout_weight="1"
-            android:background="@drawable/number_button"/>
-
-        <Button
-            android:text="-"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/buttonSub"
-            android:onClick="operatorPressed"
-            android:layout_weight="1"
-            android:background="@drawable/button_simbol"/>
     </LinearLayout>
 
     <LinearLayout
@@ -170,89 +38,251 @@
         android:layout_below="@+id/linearLayout4"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_marginTop="210dp">
+        android:layout_marginTop="130dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true">
 
         <Button
             android:text="1"
-            android:layout_width="wrap_content"
+            android:layout_width="75dp"
             android:layout_height="wrap_content"
             android:id="@+id/button1"
             android:onClick="numberPressed"
             android:layout_weight="1"
-            android:background="@drawable/number_button"/>
+            android:background="@drawable/number_button"
+            android:layout_marginRight="2dp"/>
 
         <Button
             android:text="2"
-            android:layout_width="wrap_content"
+            android:layout_width="75dp"
             android:layout_height="wrap_content"
             android:id="@+id/button2"
             android:onClick="numberPressed"
             android:layout_weight="1"
-            android:background="@drawable/number_button"/>
+            android:background="@drawable/number_button"
+            android:layout_marginRight="2dp"/>
 
         <Button
             android:text="3"
-            android:layout_width="wrap_content"
+            android:layout_width="75dp"
             android:layout_height="wrap_content"
             android:id="@+id/button3"
             android:onClick="numberPressed"
             android:layout_weight="1"
-            android:background="@drawable/number_button"/>
+            android:background="@drawable/number_button"
+            android:layout_marginRight="2dp"/>
 
         <Button
             android:text="*"
-            android:layout_width="wrap_content"
+            android:layout_width="75dp"
             android:layout_height="wrap_content"
             android:id="@+id/buttonMult"
             android:onClick="operatorPressed"
             android:layout_weight="1"
-            android:background="@drawable/button_simbol"/>
+            android:background="@drawable/button_simbol"
+            android:layout_marginRight="2dp" />
     </LinearLayout>
 
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="260dp"
-        android:layout_below="@+id/linearLayout5"
+        android:layout_below="@+id/linearLayout3"
+        android:layout_marginTop="115dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true">
 
         <Button
+            android:text="7"
+            android:layout_height="wrap_content"
+            android:id="@+id/button7"
+            android:onClick="numberPressed"
+            android:background="@drawable/number_button"
+            android:layout_marginRight="2dp"
+            android:layout_width="75dp"
+            android:layout_weight="1" />
+
+        <Button
+            android:text="8"
+            android:layout_height="wrap_content"
+            android:id="@+id/button8"
+            android:onClick="numberPressed"
+            android:background="@drawable/number_button"
+            android:layout_marginRight="2dp"
+            android:layout_alignParentBottom="false"
+            android:layout_width="75dp"
+            android:layout_weight="1" />
+
+        <Button
+            android:text="9"
+            android:layout_width="75dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/button9"
+            android:onClick="numberPressed"
+            android:background="@drawable/number_button"
+            android:layout_marginRight="2dp"
+            android:layout_weight="1" />
+
+        <Button
+            android:text="+"
+            android:layout_width="75dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/buttonAdd"
+            android:onClick="operatorPressed"
+            android:background="@drawable/button_simbol"
+            android:layout_marginRight="2dp"
+            android:layout_weight="1" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/linearLayout6"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="295dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true">
+
+        <Button
             android:text="."
-            android:layout_width="wrap_content"
+            android:layout_width="75dp"
             android:layout_height="wrap_content"
             android:id="@+id/buttonDot"
             android:onClick="pointPressed"
             android:layout_weight="1"
             android:background="@drawable/button_dot"
-            />
+            android:layout_marginRight="2dp" />
 
         <Button
             android:text="0"
-            android:layout_width="wrap_content"
+            android:layout_width="75dp"
             android:layout_height="wrap_content"
             android:id="@+id/button0"
             android:onClick="numberPressed"
             android:layout_weight="1"
-            android:background="@drawable/number_button"/>
+            android:background="@drawable/number_button"
+            android:layout_marginRight="2dp" />
+
 
         <Button
             android:text="="
-            android:layout_width="wrap_content"
+            android:layout_width="75dp"
             android:layout_height="wrap_content"
             android:id="@+id/buttonEq"
             android:onClick="equalPressed"
             android:layout_weight="1"
-            android:background="@drawable/button_equal"/>
+            android:background="@drawable/button_equal"
+            android:layout_marginRight="2dp" />
 
         <Button
             android:text="/"
-            android:layout_width="wrap_content"
+            android:layout_width="75dp"
             android:layout_height="wrap_content"
             android:id="@+id/buttonDiv"
             android:onClick="operatorPressed"
-            android:background="@drawable/button_simbol"/>
+            android:background="@drawable/button_simbol"
+            android:layout_marginRight="2dp"
+            android:layout_weight="1" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/linearLayout3"
+        android:layout_below="@+id/linearLayout11"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="75dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true">
+
+        <Button
+            android:text="AC"
+            android:layout_height="wrap_content"
+            android:onClick="allClearPressed"
+            android:id="@+id/buttonAC"
+            android:background="@drawable/button_ac"
+            android:layout_marginBottom="2dp"
+            android:layout_marginRight="2dp"
+            android:layout_width="72dp" />
+
+        <Button
+            android:text="C"
+            android:layout_height="wrap_content"
+            android:onClick="clearPressed"
+            android:id="@+id/buttonC"
+            android:background="@drawable/button_ac"
+            android:layout_marginBottom="2dp"
+            android:layout_width="72dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/pantallaOutput"
+            android:layout_weight="1"
+            android:gravity="right"
+            android:maxLines="1"
+            android:background="#ffe899"
+            android:layout_marginBottom="3dp"
+            android:layout_marginRight="2dp"
+            android:layout_marginLeft="2dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="185dp"
+        android:layout_below="@+id/linearLayout"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true">
+
+        <Button
+            android:text="4"
+            android:layout_width="75dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/button4"
+            android:onClick="numberPressed"
+            android:layout_weight="1"
+            android:background="@drawable/number_button"
+            android:layout_marginRight="2dp"/>
+
+        <Button
+            android:text="5"
+            android:layout_width="75dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/button5"
+            android:onClick="numberPressed"
+            android:layout_weight="1"
+            android:background="@drawable/number_button"
+            android:layout_marginRight="2dp"/>
+
+        <Button
+            android:text="6"
+            android:layout_width="75dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/button6"
+            android:onClick="numberPressed"
+            android:layout_weight="1"
+            android:background="@drawable/number_button"
+            android:layout_marginRight="2dp"/>
+
+        <Button
+            android:text="-"
+            android:layout_width="75dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/buttonSub"
+            android:onClick="operatorPressed"
+            android:layout_weight="1"
+            android:background="@drawable/button_simbol"
+            android:layout_marginRight="2dp" />
     </LinearLayout>
 
 </RelativeLayout>
