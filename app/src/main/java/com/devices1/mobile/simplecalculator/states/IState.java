@@ -1,5 +1,7 @@
-package com.devices1.mobile.simplecalculator;
+package com.devices1.mobile.simplecalculator.states;
 
+
+import com.devices1.mobile.simplecalculator.Key;
 
 public interface IState {
 

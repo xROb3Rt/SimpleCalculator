@@ -1,7 +1,7 @@
 package com.devices1.mobile.simplecalculator;
 
 
-public class CalculatorData {
+public final class CalculatorData {
 
     private final String input, result;
 

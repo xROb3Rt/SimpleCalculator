@@ -1,6 +1,8 @@
-package com.devices1.mobile.simplecalculator;
+package com.devices1.mobile.simplecalculator.states;
 
 
+import com.devices1.mobile.simplecalculator.CalculatorData;
+import com.devices1.mobile.simplecalculator.Key;
 
 public abstract class StateBase implements IState {
 // QUITAR ABSTRACT LUEGO

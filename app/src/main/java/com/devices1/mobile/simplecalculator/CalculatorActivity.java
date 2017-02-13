@@ -47,6 +47,7 @@ public class CalculatorActivity extends AppCompatActivity implements  ICalculato
 
     void pointPressed(View view) {
 
+
         presenter.onDecimalPointPressed();
 
     }
@@ -59,11 +60,13 @@ public class CalculatorActivity extends AppCompatActivity implements  ICalculato
 
     void allClearPressed(View view) {
 
+        //TODO
         presenter.onAllClearPressed();
     }
 
     void clearPressed(View view) {
 
+        //TODO
         presenter.onClearPressed();
     }
 
