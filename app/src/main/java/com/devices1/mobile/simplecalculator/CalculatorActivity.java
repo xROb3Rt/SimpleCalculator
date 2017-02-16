@@ -24,7 +24,7 @@ public class CalculatorActivity extends AppCompatActivity implements  ICalculato
         input = (TextView) findViewById(R.id.pantallaInput);
         result = (TextView) findViewById(R.id.pantallaOutput);
 
-        ICalculatorModel model = new ParrotModel();
+        ICalculatorModel model = new CalculatorModel();
         presenter = new CalculatorPresenter(this, model);
 
     }
@@ -35,6 +35,7 @@ public class CalculatorActivity extends AppCompatActivity implements  ICalculato
         key = button.getText().charAt(0);
         presenter.onNumericKeyPressed(key);
 
+
     }
 
     void operatorPressed(View view) {
@@ -42,6 +43,7 @@ public class CalculatorActivity extends AppCompatActivity implements  ICalculato
         button = (Button) view;
         key = button.getText().charAt(0);
         presenter.onOperatorKeyPressed(key);
+
 
     }
 

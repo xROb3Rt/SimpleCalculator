@@ -4,23 +4,28 @@ import com.devices1.mobile.simplecalculator.CalculatorData;
 import com.devices1.mobile.simplecalculator.Key;
 
 
-public class DecimalPartFirst implements IState {
+public class DecimalPartFirst extends StateBase {
 
-    public DecimalPartFirst(CalculatorData calculatorData) {
+    public DecimalPartFirst(CalculatorData data) {
+        super(data);
     }
 
     @Override
-    public IState inputKey(Key key) {
-        return null;
+    protected IState inputNormalKey(Key key) {
+        switch (key.getType()) {
+            case NUMBER:
+                data = data.addDigitToFirst(key.getC(), true);
+                return this;
+            case OPERATOR:
+                break;
+            case POINT:
+                data = data.addPointToFirst();
+                return this;
+            case EQUAL:
+                return new Initial(data.getInput());
+        }
+        return this;
     }
 
-    @Override
-    public String readInput() {
-        return null;
-    }
 
-    @Override
-    public String readResult() {
-        return null;
-    }
 }

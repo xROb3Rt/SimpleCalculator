@@ -9,9 +9,11 @@ public class Initial extends StateBase {
     public Initial() {
         this("0");
     }
+
     public Initial(CalculatorData state) {
         super(state);
     }
+
     public Initial(String input) {
         super(new CalculatorData(input));
     }
