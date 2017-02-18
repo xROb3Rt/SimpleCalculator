@@ -34,7 +34,7 @@ public class CalculatorPresenter {
 
     void onOperatorKeyPressed(char opChar){
 
-        model.inputKey(new Key(Type.OPERATOR));
+        model.inputKey(new Key(Type.OPERATOR, opChar));
         updateScreens();
     }
 

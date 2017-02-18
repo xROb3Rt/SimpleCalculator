@@ -13,7 +13,6 @@ public class CalculatorModel implements  ICalculatorModel{
 
         this.currentState = new Initial();
 
-
     }
 
     @Override

@@ -17,7 +17,6 @@ public class IntPartFirst extends StateBase {
     protected IState inputNormalKey(Key key) {
         switch (key.getType()) {
 
-
             case NUMBER:
                 data = data.addDigitToFirst(key.getC(), false);
                 return this;
