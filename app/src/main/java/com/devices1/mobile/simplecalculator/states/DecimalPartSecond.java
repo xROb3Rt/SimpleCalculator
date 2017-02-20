@@ -6,7 +6,7 @@ import com.devices1.mobile.simplecalculator.Key;
 public class DecimalPartSecond extends StateBase{
 
     public DecimalPartSecond(CalculatorData data) {
-        super(data.addPointToFirst()); //CAMBIAR A addPointToSecond()
+        super(data.addPointToSecond());
     }
 
     @Override
@@ -14,12 +14,13 @@ public class DecimalPartSecond extends StateBase{
         switch (key.getType()) {
 
             case NUMBER:
-                data = data.addDigitToFirst(key.getC(), false); // CAMBIAR A addDigitToSecond y poner true
+                data = data.addDigitToSecond(key.getC(), true);
                 return this;
             case OPERATOR:
-                break;
+                return new AfterOperator(data,key.getC());
             case POINT:
-                break;
+                data = data.addPointToSecond();
+                return this;
             case EQUAL:
                 return new Initial(data.getInput());
         }

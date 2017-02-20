@@ -14,13 +14,13 @@ public class AfterOperator extends StateBase {
         switch (key.getType())
         {
             case NUMBER:
-                return new IntPartSecond(key.getC()); // (data,key.getC())
+                return new IntPartSecond(data,key.getC());
             case POINT:
-                return new DecimalPartSecond(new CalculatorData("0")); //recibe solo (data)
+                return new DecimalPartSecond(data);
             case EQUAL:
                 return new Initial(data.getInput());
             case OPERATOR:
-                break;
+                return new AfterOperator(data, key.getC());
         }
         return this;
     }

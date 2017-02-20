@@ -66,10 +66,58 @@ public final class CalculatorData {
 
     }
 
+    public CalculatorData addDigitToSecond(char digit, boolean hasPoint) {
+
+        String newInput;
+        String newSecond;
+
+        if (hasPoint) {
+
+            if (second.length() < 9) {
+                newInput = input + digit;
+                newSecond = second + digit;
+            } else {
+                newInput = input;
+                newSecond = second;
+            }
+        } else {
+            if (second.length() < 8) {
+                newInput = input + digit;
+                newSecond = second + digit;
+            } else {
+                newInput = input;
+                newSecond = second;
+            }
+        }
+
+        BigDecimal bdSecond = new BigDecimal(newSecond);
+        BigDecimal result = CalculatorArithmetic.operate(first,operation,bdSecond);
+
+        String resultString;
+        boolean error;
+
+        if(result == null){
+            resultString = "Error";
+            error = true;
+        }else{
+            resultString = CalculatorArithmetic.toString(result,"Error");
+            error = false;
+        }
+
+        return new CalculatorData(newInput,resultString,first,newSecond,operation,error);
+    }
+
+    public CalculatorData addPointToSecond(){
+        if(second.equals("")){
+            return new CalculatorData(input+"0.",result,first,second+"0.",operation,error);
+        }else{
+            return new CalculatorData(input+".",result,first,second+".",operation,error);
+        }
+    }
+
     public CalculatorData addPointToFirst(){
         return new CalculatorData(input + ".");
     }
-
 
     public String getInput() {
         return input;
@@ -79,16 +127,34 @@ public final class CalculatorData {
         return result;
     }
 
-    public CalculatorData setOperation (char op, boolean operation){ //ATASCADO NO SE COMO SE DEBE DE HACER
+    public CalculatorData setOperation (char op, boolean operation){
 
-        if(operation == false){
+        String newInput = "";
+        String newResult;
+        BigDecimal newBigDecimal;
 
-            return new CalculatorData(this.input+op,input,new BigDecimal(input), null, charToOperation(op),false );
+        if(operation){
+            char [] newArray = input.toCharArray();
+
+            for(int i = 0; i< input.length();i++){
+                if(newArray[i] == '+' || newArray[i] == '-' || newArray[i] == '*' || newArray[i] == '/'){
+                    newInput +=op;
+                    break;
+                }else{
+                    newInput +=newArray[i];
+                }
+            }
+
+            newResult = result;
+            newBigDecimal = first;
+        }else{
+            newInput = input + op;
+            newResult = input;
+
+            newBigDecimal = new BigDecimal(input);
         }
-        else{
 
-            return new CalculatorData(this.input+op,input,new BigDecimal(input), null, charToOperation(op),false );
-        }
+        return new CalculatorData(newInput,newResult,newBigDecimal,"", charToOperation(op), false); //donde null puede ser ""
 
     }
 

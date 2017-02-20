@@ -11,8 +11,6 @@ public class IntPartFirst extends StateBase {
         super(new CalculatorData(""+digit));
     }
 
-
-
     @Override
     protected IState inputNormalKey(Key key) {
         switch (key.getType()) {
@@ -21,7 +19,7 @@ public class IntPartFirst extends StateBase {
                 data = data.addDigitToFirst(key.getC(), false);
                 return this;
             case OPERATOR:
-                break;
+                return new AfterOperator(data,key.getC());
             case POINT:
                 return new DecimalPartFirst(data);
             case EQUAL:

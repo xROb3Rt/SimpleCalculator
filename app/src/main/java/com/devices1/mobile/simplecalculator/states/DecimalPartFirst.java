@@ -17,7 +17,7 @@ public class DecimalPartFirst extends StateBase {
                 data = data.addDigitToFirst(key.getC(), true);
                 return this;
             case OPERATOR:
-                break;
+                return new AfterOperator(data,key.getC());
             case POINT:
                 data = data.addPointToFirst();
                 return this;

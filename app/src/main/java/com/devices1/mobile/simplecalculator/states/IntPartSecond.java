@@ -5,9 +5,8 @@ import com.devices1.mobile.simplecalculator.Key;
 
 public class IntPartSecond extends StateBase{
 
-    public IntPartSecond(char digit) {
-        super(new CalculatorData(""+digit)); //CAMBIAR A public IntPartSecond(Calculator data, char digit) {
-                                                               //super(data.addDigitSecond(digit,false));}
+    public IntPartSecond(CalculatorData data,char digit) {
+        super(data.addDigitToSecond(digit, false)); //CAMBIAR A public IntPartSecond(Calculator data, char digit) {super(data.addDigitSecond(digit,false));}
         }
 
     @Override
@@ -15,10 +14,10 @@ public class IntPartSecond extends StateBase{
         switch (key.getType()) {
 
             case NUMBER:
-                data = data.addDigitToFirst(key.getC(), false); //CAMBIAR A addDigitToSecond
+                data = data.addDigitToSecond(key.getC(), false);
                 return this;
             case OPERATOR:
-                break;
+                return new AfterOperator(data,key.getC());
             case POINT:
                 return new DecimalPartSecond(data);
             case EQUAL:
