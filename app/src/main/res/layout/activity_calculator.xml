@@ -27,7 +27,9 @@
             android:ellipsize="start"
             android:maxLines="1"
             android:background="#ffe899"
-            android:layout_height="70dp" />
+            android:layout_height="70dp"
+            android:textColorLink="#000000"
+            android:textSize="48sp" />
 
     </LinearLayout>
 
@@ -230,7 +232,9 @@
             android:background="#ffe899"
             android:layout_marginBottom="3dp"
             android:layout_marginRight="2dp"
-            android:layout_marginLeft="2dp" />
+            android:layout_marginLeft="2dp"
+            android:textColorLink="#000000"
+            android:textSize="30sp" />
     </LinearLayout>
 
     <LinearLayout

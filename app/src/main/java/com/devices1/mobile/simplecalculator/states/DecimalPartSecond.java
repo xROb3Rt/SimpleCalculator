@@ -17,12 +17,26 @@ public class DecimalPartSecond extends StateBase{
                 data = data.addDigitToSecond(key.getC(), true);
                 return this;
             case OPERATOR:
-                return new AfterOperator(data,key.getC());
+                return new AfterOperator(new CalculatorData(data.getResult()),key.getC());
             case POINT:
                 data = data.addPointToSecond();
                 return this;
             case EQUAL:
                 return new Initial(data.getResult());
+            case ALL_CLEAR:
+                return new Initial("0");
+            case CLEAR:
+                if(data.getInput().length() > 1){
+                    if(data.getInput().charAt(data.getInput().length() - 1) == '.'){
+                        return new AfterOperator(data.clearSecondChar());
+                    }
+                    else{
+                        data = data.clearSecondChar();
+                        return this;
+                    }
+                }else{
+                    return new Initial("0");
+                }
         }
         return this;
     }

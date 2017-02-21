@@ -1,6 +1,5 @@
 package com.devices1.mobile.simplecalculator;
 
-
 import android.os.Debug;
 import android.os.health.SystemHealthManager;
 import android.util.Log;
@@ -46,7 +45,7 @@ public final class CalculatorData {
         String newInput;
 
         if (hasPoint){
-            if(input.length() <= 9){
+            if(input.length() < 9){
                 newInput = input + digit;
             }
             else{
@@ -55,8 +54,13 @@ public final class CalculatorData {
 
         }
         else {
-            if(input.length() <= 8){
-                newInput = input + digit;
+            if(input.length() < 8){
+                if(input.equals("0")){
+                    newInput = ""+digit;
+                }
+                else {
+                    newInput = input + digit;
+                }
             }
             else{
                 newInput = input;
@@ -139,11 +143,12 @@ public final class CalculatorData {
     public CalculatorData setOperation (char op, boolean operation){
 
 
+
+
         String newInput = "";
         String newResult;
         BigDecimal newBigDecimal;
 
-//input.contains("+") || input.contains("-") || input.contains("*") || input.contains("/")
         if(operation){
             char [] newArray = input.toCharArray();
             for(int i = 0; i< input.length();i++){
@@ -164,8 +169,29 @@ public final class CalculatorData {
             newBigDecimal = new BigDecimal(input);
         }
 
-        return new CalculatorData(newInput,newResult,newBigDecimal,"", charToOperation(op), false); //donde null puede ser ""
+        return new CalculatorData(newInput,newResult,newBigDecimal,"", charToOperation(op), false);
+    }
 
+    public CalculatorData clearChar(){
+        String newInput = input.substring(0, input.length() - 1);
+        return new CalculatorData(newInput);
+    }
+
+    public CalculatorData clearSecondChar(){
+        if(second.length() > 1){
+            String newInput = input.substring(0, input.length() -1);
+            String newSecond = second.substring(0, second.length() - 1);
+
+            BigDecimal newBigDecimal = CalculatorArithmetic.operate(first, this.operation, new BigDecimal(newSecond));
+            return new CalculatorData(newInput, CalculatorArithmetic.toString(newBigDecimal, "Error"), this.first, newSecond, this.operation, false);
+        }else{
+            String newInput = input;
+            if(!second.equals("")){
+                newInput = input.substring(0, input.length() -1);
+            }
+            String newSecond = "";
+            return new CalculatorData(newInput, newInput, this.first, newSecond, this.operation, false);
+        }
     }
 
     private static CalculatorArithmetic.Operations charToOperation(char op) {

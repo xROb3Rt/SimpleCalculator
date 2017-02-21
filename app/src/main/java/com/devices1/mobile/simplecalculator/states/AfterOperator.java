@@ -9,6 +9,10 @@ public class AfterOperator extends StateBase {
         super(data.setOperation(op, false));
     }
 
+    public AfterOperator(CalculatorData data){
+        super(data);
+    }
+
     @Override
     public IState inputNormalKey(Key key) {
         switch (key.getType())
@@ -20,7 +24,11 @@ public class AfterOperator extends StateBase {
             case EQUAL:
                 return new Initial(data.getResult());
             case OPERATOR:
-                return new AfterOperator(data, key.getC());
+                return new AfterOperator(new CalculatorData(data.getResult()), key.getC());
+            case ALL_CLEAR:
+                return new Initial("0");
+            case CLEAR:
+                return new DecimalPartFirst(data.clearChar());
         }
         return this;
     }

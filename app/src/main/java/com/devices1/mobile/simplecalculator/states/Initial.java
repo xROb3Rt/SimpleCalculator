@@ -25,9 +25,17 @@ public class Initial extends StateBase {
             case NUMBER:
                 return new IntPartFirst(key.getC());
             case POINT:
-                return new DecimalPartFirst(new CalculatorData("0"));
+                return new DecimalPartFirst(new CalculatorData("0."));
             case EQUAL:
                 return new Initial(data.getInput());
+            case OPERATOR:
+                if(data.getInput().equals("Error")){
+                    return new Initial("0");
+                }else{
+                    return new AfterOperator(data, key.getC());
+                }
+            case ALL_CLEAR:
+                return new Initial("0");
 
         }
         return this;

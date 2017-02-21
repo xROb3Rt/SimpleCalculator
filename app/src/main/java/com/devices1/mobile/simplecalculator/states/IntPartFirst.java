@@ -23,7 +23,16 @@ public class IntPartFirst extends StateBase {
             case POINT:
                 return new DecimalPartFirst(data);
             case EQUAL:
-                return new Initial(data.getResult());
+                return new Initial(data.getInput());
+            case ALL_CLEAR:
+                return new Initial("0");
+            case CLEAR:
+                if(data.getInput().length() > 1){
+                        data = data.clearChar();
+                        return this;
+                }else{
+                    return new Initial("0");
+                }
         }
         return this;
     }
