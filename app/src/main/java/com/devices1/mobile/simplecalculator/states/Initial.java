@@ -27,7 +27,8 @@ public class Initial extends StateBase {
             case POINT:
                 return new DecimalPartFirst(new CalculatorData("0"));
             case EQUAL:
-                break;
+                return new Initial(data.getInput());
+
         }
         return this;
     }

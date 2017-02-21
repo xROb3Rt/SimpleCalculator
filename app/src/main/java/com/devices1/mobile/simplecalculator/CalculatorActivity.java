@@ -31,6 +31,7 @@ public class CalculatorActivity extends AppCompatActivity implements  ICalculato
 
     void numberPressed(View view) {
 
+
         button = (Button) view;
         key = button.getText().charAt(0);
         presenter.onNumericKeyPressed(key);
@@ -62,13 +63,11 @@ public class CalculatorActivity extends AppCompatActivity implements  ICalculato
 
     void allClearPressed(View view) {
 
-        //TODO
         presenter.onAllClearPressed();
     }
 
     void clearPressed(View view) {
 
-        //TODO
         presenter.onClearPressed();
     }
 

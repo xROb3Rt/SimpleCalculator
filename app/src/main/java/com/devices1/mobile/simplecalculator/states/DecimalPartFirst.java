@@ -8,7 +8,7 @@ public class DecimalPartFirst extends StateBase {
 
     public DecimalPartFirst(CalculatorData data) {
         super(data.addPointToFirst());
-    } //Le pasamos data añadiendo el punto para que al pulsarlo por primera vez lo ponga
+    }
 
     @Override
     protected IState inputNormalKey(Key key) {
@@ -22,7 +22,7 @@ public class DecimalPartFirst extends StateBase {
                 data = data.addPointToFirst();
                 return this;
             case EQUAL:
-                return new Initial(data.getInput());
+                return new Initial(data.getResult());
         }
         return this;
     }

@@ -6,7 +6,7 @@ import com.devices1.mobile.simplecalculator.Key;
 public class AfterOperator extends StateBase {
 
     public AfterOperator(CalculatorData data, char op) {
-        super(data.setOperation(op,false));
+        super(data.setOperation(op, false));
     }
 
     @Override
@@ -18,7 +18,7 @@ public class AfterOperator extends StateBase {
             case POINT:
                 return new DecimalPartSecond(data);
             case EQUAL:
-                return new Initial(data.getInput());
+                return new Initial(data.getResult());
             case OPERATOR:
                 return new AfterOperator(data, key.getC());
         }

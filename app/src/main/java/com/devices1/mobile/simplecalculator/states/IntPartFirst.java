@@ -23,7 +23,7 @@ public class IntPartFirst extends StateBase {
             case POINT:
                 return new DecimalPartFirst(data);
             case EQUAL:
-                return new Initial(data.getInput());
+                return new Initial(data.getResult());
         }
         return this;
     }

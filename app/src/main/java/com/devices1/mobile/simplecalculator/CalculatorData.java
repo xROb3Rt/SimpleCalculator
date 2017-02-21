@@ -1,6 +1,10 @@
 package com.devices1.mobile.simplecalculator;
 
 
+import android.os.Debug;
+import android.os.health.SystemHealthManager;
+import android.util.Log;
+
 import java.math.BigDecimal;
 
 import static com.devices1.mobile.simplecalculator.CalculatorArithmetic.Operations.Addition;
@@ -36,12 +40,9 @@ public final class CalculatorData {
 
     public CalculatorData(String input) {
         this(input, false);
-        //this.input = input;
-        //this.result = "";
     }
 
     public CalculatorData addDigitToFirst(char digit, boolean hasPoint){
-
         String newInput;
 
         if (hasPoint){
@@ -111,31 +112,40 @@ public final class CalculatorData {
         if(second.equals("")){
             return new CalculatorData(input+"0.",result,first,second+"0.",operation,error);
         }else{
-            return new CalculatorData(input+".",result,first,second+".",operation,error);
+            if(!second.contains(".")){
+                return new CalculatorData(input+".",result,first,second+".",operation,error);
+            }
+            else{
+                return new CalculatorData(input,result,first,second,operation,error);
+            }
+
         }
     }
 
     public CalculatorData addPointToFirst(){
-        return new CalculatorData(input + ".");
+
+        if(!input.contains(".")){
+            return new CalculatorData(input + ".");
+        }
+        else{
+            return new CalculatorData(input);
+        }
     }
 
-    public String getInput() {
-        return input;
-    }
+    public String getInput() {return input;}
 
-    public String getResult() {
-        return result;
-    }
+    public String getResult() {return result;}
 
     public CalculatorData setOperation (char op, boolean operation){
+
 
         String newInput = "";
         String newResult;
         BigDecimal newBigDecimal;
 
+//input.contains("+") || input.contains("-") || input.contains("*") || input.contains("/")
         if(operation){
             char [] newArray = input.toCharArray();
-
             for(int i = 0; i< input.length();i++){
                 if(newArray[i] == '+' || newArray[i] == '-' || newArray[i] == '*' || newArray[i] == '/'){
                     newInput +=op;

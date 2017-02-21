@@ -22,7 +22,7 @@ public class DecimalPartSecond extends StateBase{
                 data = data.addPointToSecond();
                 return this;
             case EQUAL:
-                return new Initial(data.getInput());
+                return new Initial(data.getResult());
         }
         return this;
     }
