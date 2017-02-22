@@ -30,7 +30,8 @@
             android:layout_height="70dp"
             android:textColorLink="#000000"
             android:textSize="48sp"
-            android:gravity="right" />
+            android:gravity="right"
+            android:textAlignment="textEnd" />
 
     </LinearLayout>
 
@@ -235,7 +236,8 @@
             android:layout_marginRight="2dp"
             android:layout_marginLeft="2dp"
             android:textColorLink="#000000"
-            android:textSize="30sp" />
+            android:textSize="30sp"
+            android:textAlignment="textEnd" />
     </LinearLayout>
 
     <LinearLayout
