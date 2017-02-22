@@ -12,38 +12,15 @@
     android:background="@android:color/holo_blue_light">
 
     <LinearLayout
-        android:orientation="vertical"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:layout_width="match_parent"
-        android:layout_height="70dp">
-
-        <TextView
-            android:layout_width="match_parent"
-            android:id="@+id/pantallaInput"
-            android:ellipsize="start"
-            android:maxLines="1"
-            android:background="#ffe899"
-            android:layout_height="70dp"
-            android:textColorLink="#000000"
-            android:textSize="48sp"
-            android:gravity="right" />
-
-    </LinearLayout>
-
-    <LinearLayout
         android:orientation="horizontal"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:layout_below="@+id/linearLayout4"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginTop="240dp">
+        android:layout_marginTop="180dp"
+        android:layout_height="40dp">
 
         <Button
             android:text="1"
@@ -89,23 +66,23 @@
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:layout_below="@+id/linearLayout3"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_marginTop="5dp">
+        android:layout_marginTop="5dp"
+        android:layout_height="40dp">
 
         <Button
             android:text="7"
-            android:layout_height="wrap_content"
             android:id="@+id/button7"
             android:onClick="numberPressed"
             android:background="@drawable/number_button"
             android:layout_marginRight="2dp"
-            android:layout_width="75dp"
-            android:layout_weight="1" />
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:layout_width="75dp" />
 
         <Button
             android:text="8"
@@ -142,13 +119,13 @@
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:layout_below="@+id/linearLayout6"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_marginTop="295dp"
+        android:layout_marginTop="225dp"
         android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true">
+        android:layout_alignParentEnd="true"
+        android:layout_height="40dp">
 
         <Button
             android:text="."
@@ -195,33 +172,32 @@
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:id="@+id/linearLayout3"
         android:layout_below="@+id/linearLayout11"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_marginTop="75dp"
+        android:layout_marginTop="45dp"
         android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true">
+        android:layout_alignParentEnd="true"
+        android:layout_height="42dp">
 
         <Button
             android:text="AC"
-            android:layout_height="match_parent"
             android:onClick="allClearPressed"
             android:id="@+id/buttonAC"
             android:background="@drawable/button_ac"
-            android:layout_marginBottom="2dp"
-            android:layout_marginRight="2dp"
-            android:layout_width="72dp" />
+            android:layout_width="72dp"
+            android:layout_height="match_parent"
+            android:layout_marginRight="2dp" />
 
         <Button
             android:text="C"
-            android:layout_height="match_parent"
             android:onClick="clearPressed"
             android:id="@+id/buttonC"
             android:background="@drawable/button_ac"
-            android:layout_marginBottom="2dp"
-            android:layout_width="72dp" />
+            android:layout_width="72dp"
+            android:layout_height="match_parent"
+            android:layout_marginRight="2dp" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -231,9 +207,6 @@
             android:gravity="right"
             android:maxLines="1"
             android:background="#ffe899"
-            android:layout_marginBottom="3dp"
-            android:layout_marginRight="2dp"
-            android:layout_marginLeft="2dp"
             android:textColorLink="#000000"
             android:textSize="30sp" />
     </LinearLayout>
@@ -241,8 +214,8 @@
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="185dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="135dp"
         android:layout_below="@+id/linearLayout"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
@@ -288,6 +261,27 @@
             android:layout_weight="1"
             android:background="@drawable/button_simbol"
             android:layout_marginRight="2dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:id="@+id/pantallaInput"
+            android:ellipsize="start"
+            android:maxLines="1"
+            android:background="#ffe899"
+            android:textColorLink="#000000"
+            android:textSize="38sp"
+            android:layout_height="40dp"
+            android:gravity="right" />
+
     </LinearLayout>
 
 </RelativeLayout>
