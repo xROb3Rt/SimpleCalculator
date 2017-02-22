@@ -1,9 +1,5 @@
 package com.devices1.mobile.simplecalculator;
 
-import android.os.Debug;
-import android.os.health.SystemHealthManager;
-import android.util.Log;
-
 import java.math.BigDecimal;
 
 import static com.devices1.mobile.simplecalculator.CalculatorArithmetic.Operations.Addition;
@@ -71,6 +67,16 @@ public final class CalculatorData {
 
     }
 
+    public CalculatorData addPointToFirst(){
+
+        if(!input.contains(".")){
+            return new CalculatorData(input + ".");
+        }
+        else{
+            return new CalculatorData(input);
+        }
+    }
+
     public CalculatorData addDigitToSecond(char digit, boolean hasPoint) {
 
         String newInput;
@@ -87,11 +93,17 @@ public final class CalculatorData {
             }
         } else {
             if (second.length() < 8) {
-                newInput = input + digit;
-                newSecond = second + digit;
-            } else {
-                newInput = input;
-                newSecond = second;
+                if (second.equals("0")){
+                    newSecond = "" + digit;
+                    newInput = input.substring(0,input.length()-1) + digit;
+                }else {
+                    newSecond = second + digit;
+                    newInput = input + digit;
+                }
+            }
+            else{
+                newInput=input;
+                newSecond=second;
             }
         }
 
@@ -126,24 +138,11 @@ public final class CalculatorData {
         }
     }
 
-    public CalculatorData addPointToFirst(){
-
-        if(!input.contains(".")){
-            return new CalculatorData(input + ".");
-        }
-        else{
-            return new CalculatorData(input);
-        }
-    }
-
     public String getInput() {return input;}
 
     public String getResult() {return result;}
 
     public CalculatorData setOperation (char op, boolean operation){
-
-
-
 
         String newInput = "";
         String newResult;
@@ -197,13 +196,13 @@ public final class CalculatorData {
     private static CalculatorArithmetic.Operations charToOperation(char op) {
         switch (op){
             case '+':
-            return Addition;
+                return Addition;
             case '-':
-            return Subtraction;
+                return Subtraction;
             case '*':
-            return Product;
+                return Product;
             case '/':
-            return Division;
+                return Division;
         }
         return null;
     }

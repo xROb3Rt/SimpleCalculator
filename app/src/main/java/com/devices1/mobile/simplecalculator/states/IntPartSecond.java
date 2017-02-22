@@ -17,7 +17,11 @@ public class IntPartSecond extends StateBase{
                 data = data.addDigitToSecond(key.getC(), false);
                 return this;
             case OPERATOR:
-                return new AfterOperator(new CalculatorData(data.getResult()),key.getC());
+                if(data.getResult().equals("Error")){
+                    return new Initial("0");
+                }else{
+                    return new AfterOperator(new CalculatorData(data.getResult()),key.getC());
+                }
             case POINT:
                 return new DecimalPartSecond(data);
             case EQUAL:
